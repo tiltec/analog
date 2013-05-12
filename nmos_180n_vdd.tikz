@@ -6,7 +6,7 @@
 
 \pgfmathparse{\varVGS-\varVT}
 \let\varVOD\pgfmathresult
-\begin{tikzpicture}
+\begin{tikzpicture}[trim axis right]
 \begin{axis}[ 
 xlabel=$V_{DS}$ / V, 
 ylabel={$I_{DS}$} / A,
@@ -18,7 +18,7 @@ extra x tick style={tick label style={yshift=+16pt,xshift=6pt}},
 legend entries={Simulation,Gleichung},
 legend pos=south east,
 legend cell align=left,
-title={$V_{GS}=\varVGS$V},
+title={$V_{GS}=\varVGS$V, $L=180$nm},
 ]
 \addplot[blue,mark=none] 
 table {nmos_vdd_180n_vgs900m.dat};

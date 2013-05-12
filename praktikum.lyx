@@ -19,6 +19,9 @@ width=0.4\textwidth,
 compat=newest,
 scale only axis,
 /pgf/number format/use comma,
+/tikz/every picture/.append style={
+        baseline,
+}
 }
 \end_preamble
 \use_default_options true
@@ -142,7 +145,7 @@ Zur Bestimmung der Level-1-Parameter für die Handrechnung wird ein einfacher
 \end_inset
 
  simuliert.
- Eine Spannung wird jeweils verändert, der andere festgehalten.
+ Eine Spannung wird jeweils verändert, die andere festgehalten.
  Dabei ermittelt der Simulator den Strom zwischen Drain und Source 
 \begin_inset Formula $I_{DS}$
 \end_inset
@@ -185,7 +188,8 @@ Den Technologieparameter
 \begin_inset Formula $1,8\mbox{V}$
 \end_inset
 
- einer einfachen Differenzstufe und einer stärker kaskodierten Schaltung.
+ einer einfachen Differenzstufe beziehungsweise einer stärker kaskodierten
+ Schaltung.
  Zur Berechnung verwenden wir ein MATLAB-Skript, das im Bereich der größten
  Steigung eine lineare Regression durchführt, da hier die schwache Inversion
  und die Abnahme der Ladungsträgermobilität den geringsten Einfluss hat.
@@ -1685,13 +1689,16 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "channel_length_modulation_nmos.tikz"
@@ -1701,28 +1708,12 @@ filename "channel_length_modulation_nmos.tikz"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-NMOS
-\end_layout
-
 \end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "channel_length_modulation_pmos.tikz"
@@ -1732,29 +1723,34 @@ filename "channel_length_modulation_pmos.tikz"
 
 \end_layout
 
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
 \begin_layout Plain Layout
-\begin_inset Caption
+NMOS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
 PMOS
 \end_layout
 
 \end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Caption
 
 \begin_layout Plain Layout
@@ -1810,7 +1806,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1844,7 +1840,7 @@ filename "nmos_180n_vdd.tikz"
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1965,6 +1961,157 @@ Vergleich von Simulation und Modellgleichung beim NMOS
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L=180\mbox{nm}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "pmos_180n_vdd.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "pmos_180n_vgs.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $L=900\mbox{nm}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "pmos_900n_vdd.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand input
+filename "pmos_900n_vgs.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vergleich von Simulation und Modellgleichung beim PMOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 

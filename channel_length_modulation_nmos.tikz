@@ -1,12 +1,12 @@
 
-\begin{tikzpicture}
+\begin{tikzpicture}[trim axis right]
 \begin{axis}[ 
 xlabel=${\frac{1}{L}}$ / $m^{-1}$, 
 ylabel=$\lambda$ / $V^{-1}$,
 %grid=major,
 legend entries={$V_{GS}$=0.9,$V_{GS}$=0.5},
 legend pos=north west,
-%title=NMOS,
+title=NMOS,
 ]
 \addplot coordinates {
 	(1/180e-6,0.1914)

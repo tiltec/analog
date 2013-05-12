@@ -1,11 +1,13 @@
 
-\begin{tikzpicture}
+\begin{tikzpicture}[trim axis left]
 \begin{axis}[ 
 xlabel=${1 \over L}$ / $m^{-1}$, 
 ylabel=$\lambda$ / $V^{-1}$,
+yticklabel pos=right,
 %grid=major,
 legend entries={$V_{GS}$=0.9,$V_{GS}$=0.5},
 legend pos=north west,
+title=PMOS,
 ]
 \addplot coordinates {
 	(1/180e-6,0.157)

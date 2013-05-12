@@ -3,18 +3,19 @@
 \newcommand*\varVT{0.321}
 \newcommand*\varlambda{0.191}
 \newcommand*\varVDS{0.6}
-\begin{tikzpicture}
+\begin{tikzpicture}[trim axis left]
 \begin{axis}[ 
 xlabel=$V_{GS}$ / V, 
 ylabel={$I_{DS}$} / A,
+yticklabel pos=right,
 xmin=0, xmax=1.8,
 extra x ticks={\varVT},
 extra x tick style={xticklabel=$V_T$},
 %grid=major,
-legend entries={Simulation,Gleichung},
+%legend entries={Simulation,Gleichung},
 legend pos=north west,
 legend cell align=left,
-title={$V_{DS}=\varVDS$V},
+title={$V_{DS}=\varVDS$V, $L=180$nm},
 ]
 \addplot[blue,mark=none] 
 table {nmos_vgs_180n_vds600m.dat};
