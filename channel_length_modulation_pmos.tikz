@@ -1,0 +1,26 @@
+
+\begin{tikzpicture}
+\begin{axis}[ 
+xlabel=${1 \over L}$ $\lbrack$ $m^{-1}$ $\rbrack$, 
+ylabel=$\lambda$ [$V^{-1}${]},
+%grid=major,
+legend entries={$V_{GS}$=0.9,$V_{GS}$=0.5},
+legend pos=north west,
+title=PMOS,
+]
+\addplot coordinates {
+	(1/180e-6,0.157)
+	(1/360e-6,0.061)
+	(1/900e-6,0.025)
+	(1/1800e-6,0.013)
+};
+\addplot coordinates {
+	(1/180e-6,0.588)
+	(1/360e-6,0.133)
+	(1/900e-6,0.051)
+	(1/1800e-6,0.025)
+};
+
+\end{axis}
+
+\end{tikzpicture}
