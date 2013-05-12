@@ -1,0 +1,38 @@
+
+\newcommand*\varK{37e-6}
+\newcommand*\varVT{0.436}
+\newcommand*\varlambda{0.026}
+\newcommand*\varVDS{0.6}
+\begin{tikzpicture}[trim axis left]
+\begin{axis}[ 
+xlabel=$|V_{GS}|$ / V, 
+ylabel={$|I_{DS}|$} / A,
+yticklabel pos=right,
+xmin=0, xmax=1.8,
+extra x ticks={\varVT},
+extra x tick style={xticklabel=$|V_T|$},
+extra x tick style={tick label style={yshift=16pt,xshift=-12pt}},
+%grid=major,
+%legend entries={Simulation,Gleichung},
+legend pos=north west,
+legend cell align=left,
+title={$|V_{DS}|=\varVDS$V, $L=900$nm},
+]
+\addplot[blue,mark=none] 
+table {pmos_vgs_900n_vds600m.dat};
+
+%overdrive, with ch length modulation
+\addplot[red, mark=none,
+domain=\varVT+\varVDS:1.8,
+] 
+{\varK/2*1.5*(1+\varlambda*\varVDS)*(x-\varVT)^2};
+
+%linear
+\addplot[red, dashed, mark=none,
+domain=\varVT:\varVT+\varVDS,
+] 
+{\varK*1.5* (\varVDS*(x-\varVT) - 0.5*\varVDS^2)};
+
+\draw ({axis cs:\varVT,0} |- {rel axis cs:0,0}) -- ({axis cs:\varVT,0} |- {rel axis cs:0,1});
+\end{axis}
+\end{tikzpicture}
