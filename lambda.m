@@ -21,8 +21,13 @@ for i = 1:length(steig)
         lin_Id = [lin_Id Id(i)];
     end
 end
-p = polyfit(lin_Vd, lin_Id, 1);
-disp(['lambda: ' num2str( p(1)/p(2) )])
+[p,S] = polyfit(lin_Vd, lin_Id, 1);
+% fitness value
+%http://www.mathworks.de/de/help/matlab/data_analysis/linear-regression.html
+SStotal = (length(lin_Id)-1)*var(lin_Id); 
+fitness = 1- (S.normr)^2/SStotal;
 l = p(1)/p(2);
+% disp(['lambda: ' num2str( l ) ', fitness: ' num2str(fitness )])
+disp(['lambda: ' num2str( l )])
 
 end
