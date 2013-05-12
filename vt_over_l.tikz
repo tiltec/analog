@@ -1,0 +1,29 @@
+
+\begin{tikzpicture}
+\begin{axis}[ 
+%ylabel={$K_{S}^{'}$/ $\mu$A$V^{-2}$}, 
+ylabel={$V_{T0}$ / V},
+xlabel={$L$/nm},
+xtick={180,360,900,1800},
+grid=major,
+legend entries={NMOS,PMOS},
+legend pos=outer north east
+%legend columns=-1,
+%legend pos=east,
+%title=180nm NMOS,
+]
+\addplot coordinates {
+	(180,321)
+	(360,392)
+	(900,335)
+	(1800,301)
+};
+\addplot coordinates {
+	(180,373)
+	(360,451)
+	(900,436)
+	(1800,417)
+};
+
+\end{axis}
+\end{tikzpicture}

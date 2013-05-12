@@ -1,23 +1,24 @@
 
-\newcommand*\varK{1.57e-4}
-\newcommand*\varVT{0.337}
-\newcommand*\varlambda{0.1914}
+\newcommand*\varK{172e-6}
+\newcommand*\varVT{0.321}
+\newcommand*\varlambda{0.191}
 \newcommand*\varVGS{0.9}
 
 \pgfmathparse{\varVGS-\varVT}
 \let\varVOD\pgfmathresult
 \begin{tikzpicture}
 \begin{axis}[ 
-xlabel=$V_{DS}$, 
-ylabel={$I_{DS}$},
+xlabel=$V_{DS}$ / V, 
+ylabel={$I_{DS}$} / A,
 xmin=0, xmax=1.8,
 extra x ticks={\varVOD},
 extra x tick labels={$V_{OD}$},
-extra x tick style={tick label style={yshift=-10pt}},
-grid=major,
-legend entries={Simulation,Modellgleichung},
+extra x tick style={tick label style={yshift=+16pt,xshift=6pt}},
+%grid=major,
+legend entries={Simulation,Gleichung},
 legend pos=south east,
-title=NMOS{,} L{=}180nm{,} $V_{GS}{=}\varVGS V$,
+legend cell align=left,
+title={$V_{GS}=\varVGS$V},
 ]
 \addplot[blue,mark=none] 
 table {nmos_vdd_180n_vgs900m.dat};
@@ -29,11 +30,11 @@ domain=\varVOD:1.8,
 {\varK/2*1.5*(1+\varlambda*x)*(\varVOD)^2};
 
 %linear
-\addplot[red, mark=none,
+\addplot[red, dashed, mark=none,
 domain=0:\varVOD,
 ] 
 {\varK*1.5* (x*(\varVOD) - 0.5*x^2)};
 
-\draw ({axis cs:\varVOD,0} |- {rel axis cs:0,0}) -- ({axis cs:\varVOD,0} |- {rel axis cs:0,1});
+\draw ({axis cs:\varVOD,0} |- {rel axis cs:0,0.1}) -- ({axis cs:\varVOD,0} |- {rel axis cs:0,1});
 \end{axis}
 \end{tikzpicture}

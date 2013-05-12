@@ -1,19 +1,20 @@
 
-\newcommand*\varK{1.57e-4}
-\newcommand*\varVT{0.337}
-\newcommand*\varlambda{0.1914}
+\newcommand*\varK{172e-6}
+\newcommand*\varVT{0.321}
+\newcommand*\varlambda{0.191}
 \newcommand*\varVDS{0.6}
 \begin{tikzpicture}
 \begin{axis}[ 
-xlabel=$V_{GS}$, 
-ylabel={$I_{DS}$},
+xlabel=$V_{GS}$ / V, 
+ylabel={$I_{DS}$} / A,
 xmin=0, xmax=1.8,
 extra x ticks={\varVT},
 extra x tick style={xticklabel=$V_T$},
-grid=major,
-legend entries={Simulation,Modellgleichung},
+%grid=major,
+legend entries={Simulation,Gleichung},
 legend pos=north west,
-title=NMOS{,} L{=}180nm{,} $V_{DS}{=}\varVDS V$,
+legend cell align=left,
+title={$V_{DS}=\varVDS$V},
 ]
 \addplot[blue,mark=none] 
 table {nmos_vgs_180n_vds600m.dat};
@@ -25,7 +26,7 @@ domain=\varVT+\varVDS:1.8,
 {\varK/2*1.5*(1+\varlambda*\varVDS)*(x-\varVT)^2};
 
 %linear
-\addplot[red, mark=none,
+\addplot[red, dashed, mark=none,
 domain=\varVT:\varVT+\varVDS,
 ] 
 {\varK*1.5* (\varVDS*(x-\varVT) - 0.5*\varVDS^2)};
