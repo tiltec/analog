@@ -1,10 +1,7 @@
 % 
-\newcommand*\varK{172e-6}
-\newcommand*\varVT{0.321}
+\newcommand*\varK{157e-6}
+\newcommand*\varVT{0.337}
 \newcommand*\varlambda{0.191}
-% \newcommand*\varK{194e-6}
-% \newcommand*\varVT{0.337}
-% \newcommand*\varlambda{0.191}
 \newcommand*\varVGS{0.9}
 
 \pgfmathparse{\varVGS-\varVT}

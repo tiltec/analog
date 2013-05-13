@@ -4,7 +4,7 @@
 xlabel=${\frac{1}{L}}$ / $m^{-1}$, 
 ylabel=$\lambda$ / $V^{-1}$,
 %grid=major,
-legend entries={$V_{GS}$=0.9,$V_{GS}$=0.5},
+legend entries={$V_{GS}=0.9$V,$V_{GS}=0.5$V},
 legend pos=north west,
 title=NMOS,
 ]

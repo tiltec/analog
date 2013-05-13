@@ -5,11 +5,8 @@
 \textclass scrartcl
 \begin_preamble
 \usepackage{tikz,pgfplots}
+\usepackage{icomma}
 %\usepackage{amsmath, amssymb,bm,color}
-%\usepackage[margin=0cm,nohead]{geometry}
-%\usepackage[active,tightpage]{preview}
-%\usetikzlibrary{shapes,arrows}
-% needed for BB
 %\usetikzlibrary{calc}
 \tikzset{
 font=\small,
@@ -23,8 +20,13 @@ scale only axis,
         baseline,
 }
 }
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
 \end_preamble
 \use_default_options true
+\begin_modules
+fixltx2e
+\end_modules
 \maintain_unincluded_children false
 \language ngerman
 \language_package default
@@ -45,11 +47,12 @@ scale only axis,
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize default
 \spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -64,8 +67,8 @@ scale only axis,
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 2
+\tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language polish
@@ -131,7 +134,7 @@ Bestimmung der Level-1-Parameter
 \end_layout
 
 \begin_layout Subsection
-Aufbau
+Vorgehen
 \end_layout
 
 \begin_layout Standard
@@ -155,14 +158,14 @@ Zur Bestimmung der Level-1-Parameter für die Handrechnung wird ein einfacher
 
 \begin_layout Standard
 Den Technologieparameter 
-\begin_inset Formula $K_{S}^{'}=\mu C_{Ox}$
+\begin_inset Formula $K^{'}=\mu C_{Ox}$
 \end_inset
 
- im Sättigungsbereich und die Schwellspannumg 
+ und die Schwellspannumg 
 \begin_inset Formula $V_{T0}$
 \end_inset
 
- bestimmt man gemäß Allen & Holberg aus dem Verlauf von 
+ bestimmt man gemäß Allen und Holberg aus dem Verlauf von 
 \begin_inset Formula $\sqrt{I_{DS}}$
 \end_inset
 
@@ -176,7 +179,7 @@ Den Technologieparameter
 \end_inset
 
  wählten wir 
-\begin_inset Formula $0,6$
+\begin_inset Formula $0,6\mbox{V}$
 \end_inset
 
  und 
@@ -263,7 +266,7 @@ Der gesamte Versuch wird für ein Kanalweiten-zu-Längen-Verhältnis
 \begin_inset Formula $W/L=10$
 \end_inset
 
- gab es keine signifikanten Unterschiede.
+ ergaben sich keine signifikanten Unterschiede.
  
 \end_layout
 
@@ -316,7 +319,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $K_{S}^{'}/\mbox{\mu A}\mbox{\mbox{V}^{-2}}$
+\begin_inset Formula $K^{'}/\mbox{\mu A}\mbox{\mbox{V}^{-2}}$
 \end_inset
 
 
@@ -511,7 +514,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $K_{S}^{'}/\mbox{\mu A}\mbox{V^{-2}}$
+\begin_inset Formula $K^{'}/\mbox{\mu A}\mbox{V^{-2}}$
 \end_inset
 
 
@@ -565,7 +568,7 @@ m
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{DS}=0,3$
+\begin_inset Formula $|V_{DS}|=0,3$
 \end_inset
 
 V
@@ -615,7 +618,7 @@ V
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{DS}=0,6$
+\begin_inset Formula $|V_{DS}|=0,6$
 \end_inset
 
 V
@@ -696,7 +699,7 @@ name "tab:Technologieparameter"
 \end_inset
 
 Technologieparameter 
-\begin_inset Formula $K_{S}^{'}=\mu C_{Ox}$
+\begin_inset Formula $K^{'}=\mu C_{Ox}$
 \end_inset
 
 
@@ -725,7 +728,14 @@ reference "tab:Schwellspannung"
 \begin_inset Formula $2L_{min}$
 \end_inset
 
- auf.
+ auf (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schwellspannung-über-Kanallänge"
+
+\end_inset
+
+).
  Es deutet sich an, dass 
 \begin_inset Formula $V_{T0}$
 \end_inset
@@ -734,14 +744,8 @@ reference "tab:Schwellspannung"
 \begin_inset Formula $L$
 \end_inset
 
- annähernd konstant wird (siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Schwellspannung-über-Kanallänge"
-
-\end_inset
-
-).
+ annähernd konstant wird, weshalb diese für die Handrechnung vorzuziehen
+ sind.
 \end_layout
 
 \begin_layout Standard
@@ -967,7 +971,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{T0}/\mbox{mV}$
+\begin_inset Formula $|V_{T0}|/\mbox{mV}$
 \end_inset
 
 
@@ -1021,7 +1025,7 @@ m
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{DS}=0,3$
+\begin_inset Formula $|V_{DS}|=0,3$
 \end_inset
 
 V
@@ -1071,7 +1075,7 @@ V
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{DS}=0,6$
+\begin_inset Formula $|V_{DS}|=0,6$
 \end_inset
 
 V
@@ -1251,6 +1255,8 @@ reference "fig:Inverse-Proportionalität-lambda"
 \end_inset
 
  erfüllt ist.
+ Für die Handrechnung werden wir deshalb die Werte für die höhere Gate-Source-Sp
+annung verwenden.
 \end_layout
 
 \begin_layout Standard
@@ -1534,7 +1540,7 @@ m
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{GS}=0,5$
+\begin_inset Formula $|V_{GS}|=0,5$
 \end_inset
 
 V
@@ -1584,7 +1590,7 @@ V
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V_{GS}=0,9$
+\begin_inset Formula $|V_{GS}|=0,9$
 \end_inset
 
 V
@@ -1690,7 +1696,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="2">
+<lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="0">
 <column alignment="center" valignment="top" width="0">
@@ -1726,26 +1732,6 @@ filename "channel_length_modulation_pmos.tikz"
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-NMOS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-PMOS
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -1773,10 +1759,13 @@ Inverse Proportionalität zwischen Kanallänge und Kanallängenmodulation
 
 \end_layout
 
+\begin_layout Subsection
+Vergleich mit Simulation
+\end_layout
+
 \begin_layout Standard
-Wenn man nun mit den erhaltenen Parametern die Modellgleichungen aufstellt
- und mit den Simulationskurven vergleicht, stellt man fest, dass diese nur
- in einem bestimmten Bereich übereinstimmen.
+Um die erhaltenen Parameter zu weiter zu beurteilen, stellt man die Modellgleich
+ungen auf und vergleicht diese mit den Simulationskurven.
  Exemplarisch dafür sind in Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1784,7 +1773,14 @@ reference "fig:Vergleich-NMOS"
 
 \end_inset
 
- die Werte für 
+ (NMOS) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vergleich-PMOS"
+
+\end_inset
+
+ (PMOS) die Werte für 
 \begin_inset Formula $L=180\mbox{nm}$
 \end_inset
 
@@ -1792,7 +1788,40 @@ reference "fig:Vergleich-NMOS"
 \begin_inset Formula $900\mbox{nm}$
 \end_inset
 
- aufgetragen.
+ bei 
+\begin_inset Formula $V_{GS}=0,6\mbox{V}$
+\end_inset
+
+ beziehungsweise 
+\begin_inset Formula $V_{DS}=0,9\mbox{V}$
+\end_inset
+
+aufgetragen.
+ Die Modellgleichung für die Triodenbereich ist gestrichelt dargestellt.
+\end_layout
+
+\begin_layout Standard
+In den Diagrammen fällt auf, dass die beiden Kurven nur in kleinen Bereichen
+ übereinstimmen.
+ Besonders bei 
+\begin_inset Formula $L_{min}$
+\end_inset
+
+ treffen sich die Kurven nur in dem Punkt, in dem sie ermittelt wurden.
+ Dies deutet darauf hin, dass Effekte höherer Ordnung eine große Rolle spielen.
+ Bei 
+\begin_inset Formula $5L_{min}$
+\end_inset
+
+ beschreibt die Modellgleichung den Transistor deutlich besser, weshalb
+ diese Strukturgröße für die möglichst gute Übereinstimmung von Handrechnung
+ und Simulation vorzuziehen ist.
+ Wenn die spätere Fläche auf dem IC vernachlässigbar ist, bietet sich auch
+ die Verwendung von 
+\begin_inset Formula $10L_{min}$
+\end_inset
+
+ an.
 \end_layout
 
 \begin_layout Standard
@@ -1803,13 +1832,16 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "nmos_180n_vdd.tikz"
@@ -1819,31 +1851,12 @@ filename "nmos_180n_vdd.tikz"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset Formula $L=180\mbox{nm}$
 \end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "nmos_180n_vgs.tikz"
@@ -1853,35 +1866,34 @@ filename "nmos_180n_vgs.tikz"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset Formula $L=180\mbox{nm}$
 \end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
+\begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "nmos_900n_vdd.tikz"
@@ -1889,30 +1901,14 @@ filename "nmos_900n_vdd.tikz"
 \end_inset
 
 
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset Formula $L=900\mbox{nm}$
-\end_inset
-
-
 \end_layout
 
 \end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\align center
 \begin_inset CommandInset include
 LatexCommand input
 filename "nmos_900n_vgs.tikz"
@@ -1922,24 +1918,10 @@ filename "nmos_900n_vgs.tikz"
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-\begin_inset Formula $L=900\mbox{nm}$
 \end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
+</cell>
+</row>
+</lyxtabular>
 
 \end_inset
 
@@ -1978,35 +1960,12 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="0">
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="top">
+<column alignment="center" valignment="top" width="0pt">
 <column alignment="center" valignment="top" width="0">
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $L=180\mbox{nm}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2021,7 +1980,7 @@ filename "pmos_180n_vdd.tikz"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2038,19 +1997,16 @@ filename "pmos_180n_vgs.tikz"
 </cell>
 </row>
 <row>
-<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $L=900\mbox{nm}$
-\end_inset
-
 
 \end_layout
 
 \end_inset
 </cell>
-<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2103,6 +2059,12 @@ filename "pmos_900n_vgs.tikz"
 \begin_inset Caption
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vergleich-PMOS"
+
+\end_inset
+
 Vergleich von Simulation und Modellgleichung beim PMOS
 \end_layout
 
