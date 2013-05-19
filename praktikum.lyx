@@ -165,7 +165,14 @@ Den Technologieparameter
 \begin_inset Formula $V_{T0}$
 \end_inset
 
- bestimmt man gemäß Allen und Holberg aus dem Verlauf von 
+ bestimmt man gemäß 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "allen"
+
+\end_inset
+
+ aus dem Verlauf von 
 \begin_inset Formula $\sqrt{I_{DS}}$
 \end_inset
 
@@ -174,6 +181,24 @@ Den Technologieparameter
 \end_inset
 
 .
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Formeln
+\end_layout
+
+\end_inset
+
+Dies ist in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vorgehen_vgs"
+
+\end_inset
+
+ zu sehen.
  Als Werte für 
 \begin_inset Formula $V_{DS}$
 \end_inset
@@ -193,9 +218,131 @@ Den Technologieparameter
 
  einer einfachen Differenzstufe beziehungsweise einer stärker kaskodierten
  Schaltung.
- Zur Berechnung verwenden wir ein MATLAB-Skript, das im Bereich der größten
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+erklärung
+\end_layout
+
+\end_inset
+
+Zur Berechnung verwenden wir ein MATLAB-Skript, das im Bereich der größten
  Steigung eine lineare Regression durchführt, da hier die schwache Inversion
  und die Abnahme der Ladungsträgermobilität den geringsten Einfluss hat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "sqrt_id_vgs.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vorgehen_vgs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "id_vds.tikz"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:vorgehen_vds"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Darstellung des Vorgehens zur Ermittlung der Level-1-Parameter 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "allen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -228,7 +375,14 @@ n.
 
  und berechnet in diesem Bereich wiederum die lineare Regression.
  Dadurch werden nur Zustände verwendet, in denen der Transistor komplett
- in Sättigung ist.
+ in Sättigung ist, wie in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:vorgehen_vds"
+
+\end_inset
+
+ zu sehen ist.
 \end_layout
 
 \begin_layout Standard
@@ -237,7 +391,7 @@ Die gegebene MOSFET-Technologie hat eine Mindest-Kanallänge von
 \end_inset
 
 .
- Da zu erwarten ist, dass die Parameter sich für größere 
+ Da zu Erwarten ist, dass die Parameter sich für größere 
 \begin_inset Formula $L$
 \end_inset
 
@@ -275,7 +429,11 @@ Ergebnisse
 \end_layout
 
 \begin_layout Standard
-Die ermittelten Technologieparameter in Tabelle 
+Die ermittelten Technologieparameter 
+\begin_inset Formula $K^{'}$
+\end_inset
+
+ in Tabelle 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Technologieparameter"
@@ -283,8 +441,8 @@ reference "tab:Technologieparameter"
 \end_inset
 
  weisen nur eine geringe Abhängigkeit von der Kanallänge auf.
- Zwischen NMOS und PMOS besteht jedoch ein ungewöhnlich großer Unterschied,
- bis hin zu Faktor 5 bei 
+ Zwischen NMOS und PMOS besteht jedoch ein Unterschied von bis zu Faktor
+ 5 bei 
 \begin_inset Formula $1,8\mu\mbox{m}$
 \end_inset
 
@@ -736,6 +894,19 @@ reference "fig:Schwellspannung-über-Kanallänge"
 \end_inset
 
 ).
+ Hierbei handelt es sich um den Roll-Off-Effekt, bei dem sich die die Raumladung
+szonen der PN-Übergänge überlappen.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+zu kleineren L überlappen sich die Raumladungszonen von Drain und Source,
+ V_T sollte kleiner werden.
+ Warum das Maximum? 
+\end_layout
+
+\end_inset
+
  Es deutet sich an, dass 
 \begin_inset Formula $V_{T0}$
 \end_inset
@@ -2073,13 +2244,28 @@ Vergleich von Simulation und Modellgleichung beim PMOS
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Allen, Holberg"
+key "allen"
+
+\end_inset
+
+Allen, Holberg, 
+\begin_inset Quotes pld
+\end_inset
+
+CMOS
+\begin_inset Quotes prd
+\end_inset
+
+, Verlag
 \end_layout
 
 \end_body

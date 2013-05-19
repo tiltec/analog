@@ -1,0 +1,36 @@
+
+\newcommand*\varK{177e-6}
+\newcommand*\varVT{0.335}
+\newcommand*\varlambda{0.051}
+\newcommand*\varVDS{0.6}
+\begin{tikzpicture}
+%[trim axis left]
+\begin{axis}[ 
+xlabel=$V_{GS}$, 
+xlabel style={yshift=14pt},
+ylabel=$\sqrt{I_{DS}}$,
+ytick=\empty,
+xtick=\empty,
+xmin=0, xmax=1.8,
+ymin=0,
+scaled ticks=false,
+extra x ticks={\varVT},
+extra x tick style={xticklabel=$V_{T0}$},
+%grid=major,
+%legend entries={Simulation,Gleichung},
+%legend pos=north west,
+%legend cell align=left,
+%title={$V_{DS}=\varVDS$V, $L=900$nm},
+]
+
+\addplot[blue, style=dotted,thick] 
+table [y expr=sqrt(\thisrowno{1})]
+{nmos_vgs_900n_vds600m.dat};
+\addplot[red,domain=0:1.8,] {(-\varVT+x)*sqrt(\varK/2*1.5)}
+node(n1)[pos=0.4] {}
+node(n2)[pos=0.55] {}
+;
+\draw (node cs:name=n1) -| (node cs:name=n2)
+node[pos=0.75,right] {$\sqrt{\frac{K^{'} W}{2L}}$};
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,40 @@
+
+\newcommand*\varK{177e-6}
+\newcommand*\varVT{0.335}
+\newcommand*\varlambda{0.051}
+\newcommand*\varVDS{0.6}
+\newcommand*\varIprime{0.444e-4}
+\begin{tikzpicture}
+%[trim axis left]
+\begin{axis}[ 
+xlabel=$V_{DS}$, 
+ylabel style={xshift=30pt,yshift=-12pt},
+ylabel=${I_{DS}}$,
+ytick=\empty,
+xtick=\empty,
+xmin=0, xmax=1.8,
+scaled ticks=false,
+ymin=0.00004,
+extra y ticks={\varIprime},
+extra y tick style={yticklabel=$ I^{'}$},
+%grid=major,
+%legend entries={Simulation,Gleichung},
+%legend pos=north west,
+%legend cell align=left,
+%title={$V_{DS}=\varVDS$V, $L=900$nm},
+]
+
+\addplot[blue, style=dotted,thick] 
+table {nmos_vdd_900n_vgs900m.dat};
+
+\addplot[red,domain=0:1.8,] {(1+\varlambda*x)*(\varIprime)}
+node(n1)[pos=0.55] {}
+node(n2)[pos=0.75] {}
+;
+\draw (node cs:name=n1) -| (node cs:name=n2)
+node[pos=0.35,below] {$\lambda I^{'}$};
+
+%\draw (axis cs:0,\varIprime) --  (axis cs:0.07,\varIprime)  node[right] {$I^{'}$};
+%\draw ({axis cs:\varVT,0} |- {rel axis cs:0,0}) -- ({axis cs:\varVT,0} |- {rel axis cs:0,1});
+\end{axis}
+\end{tikzpicture}
